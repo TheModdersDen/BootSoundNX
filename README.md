@@ -1,6 +1,12 @@
 # BootSoundNX
 
-A system module that plays sound on the nintendo switch boot!
+## About
+
+This is a system module that allows you, the user, to play a sound on the nintendo switch boot (also known as a 'bootsound')! This is a fork of the original project by [KranKRival](https://github.com/KranKRival/BootSoundNX). This project is currently maintained by [TheModdersDen](https://github.com/TheModdersDen/BootSoundNX).
+
+## Disclaimer
+
+This sysmodule is currently under development, and is not ready for use. Please do not use this on your main switch, as it is not "production ready". If you would like to contribute, please feel free to make a pull request or an issue on the GitHub repository. I am open to contributions, and will review them as soon as I can. Please note that I am not responsible for any damage that may occur to your device. Please use this at your own risk. If you have any issues, please create an issue on the GitHub repository. I will not provide support for this project on any other platform than the HOS system of the Nintendo Switch. This is becauseI do not have the time to learn how to program and develop for other platforms, as well as operate the code base for them. I also **do not** support emulation of this project. If you are using this project on an emulator, please do not ask for support. I will not provide it.
 
 ## Credits
 
