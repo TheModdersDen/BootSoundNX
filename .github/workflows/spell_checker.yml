@@ -1,0 +1,21 @@
+# Spell checker workflow for GitHub Actions using cSpell and using a custom dictionary from VS Code
+name: Spell Checker
+on:
+    push:
+        branches:
+        - production
+        - development
+    # Allows you to run this workflow manually from the Actions tab
+    workflow_dispatch:
+
+jobs:
+    spell-check:
+        runs-on: ubuntu-latest
+        steps:
+        - uses: actions/checkout@v2
+        - name: Install cSpell
+          run: npm install -g cspell
+        - name: Spell check
+          run: cspell "**/*"
+          env:
+              CSpellUserSettings: .vscode/cspell.json
