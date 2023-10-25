@@ -1,6 +1,21 @@
 {
     "recommendations": [
-        "github.copilot",
-        "eamodio.gitlens"
+        "eamodio.gitlens",
+        "ms-vscode.cpptools",
+        "ms-vscode.cpptools-extension-pack",
+        "ms-vscode.cpptools-themes",
+        "circleci.circleci",
+        "ms-vscode.cmake-tools",
+        "streetsidesoftware.code-spell-checker",
+        "usernamehw.errorlens",
+        "github.vscode-github-actions",
+        "github.copilot-labs",
+        "github.vscode-pull-request-github",
+        "github.remotehub",
+        "esbenp.prettier-vscode",
+        "ms-vscode-remote.vscode-remote-extensionpack",
+        "bmalehorn.shell-syntax",
+        "gruntfuggly.todo-tree",
+        "vscode-icons-team.vscode-icons"
     ]
 }
