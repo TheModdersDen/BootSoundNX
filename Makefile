@@ -18,7 +18,7 @@ EXEFS_SRC	:=	exefs_src
 ROMFS	:=	romfs
 
 export APP_AUTHOR := KranKRival and TheModdersDen
-export APP_VERSION = 1.5.0
+export APP_VERSION = $(BOOTSOUNDNX_VERSION)
 
 ARCH	:=	-march=armv8-a -mtune=cortex-a57 -mtp=soft -fPIE
 

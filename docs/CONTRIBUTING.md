@@ -1,92 +1,83 @@
 # Contributing to the project
 
-## A brief foreword
-
-First of all, thank you for your interest in contributing to this project! I really appreciate it! However, there are a few things that I would like to mention before you start contributing to this project.
-
-First, please be aware that I am a college student, and as such, I do not have a lot of time to work on this project. I will try to get to your pull requests as soon as possible, but please be patient with me. I am human, and can only do so much.
-
-Second, please be aware that we have a code of conduct for this project. Please read it before contributing to this project. If you do not follow the code of conduct, you will not be allowed to contribute to this project any further.
-
-Third, please be aware that I am not the original developer/maintainer of this project. That title belongs to [KranKRival](https://github.com/KranKRival). I am merely the current maintainer of this project. Please do not ask me to add features that are not in the original project. If you would like to add features, please fork the project and add them there. If you would like to add features to this project, please add a feature request as outlined below (and preferably some code to go with it, too).
-
-Fourth, and finally, while I am not the original developer, I am trying to make improvements to the original project. That is the purpose (and the reason why I forked the project in the first place). It is also the reason OSS (Open Source Software) exists in the first place. I am open to ideas, contributions, etc., just please be aware of the above points and try to be respectful of my time and the time of others.
-
 ## How to contribute
 
-### Reporting bugs
+### Reporting Bugs
 
-If you find a bug in the code, please report it by creating an issue. Please make sure that the bug has not already been reported by searching for it in the issues tab. If it has not been reported, please create an issue with the following information:
+This section guides you through submitting a bug report for the project. Following these guidelines helps maintainers and the community understand your report, reproduce the behavior, and find related reports.
 
-- The version of the code you are using (if you are using a release, please use the version number of the release, if you are using the development branch, please use the commit hash of the commit you are using)
-- The steps to reproduce the bug (What you did to cause the bug, and how you did it)
-- The expected behavior (What you think should happen)
-- The actual behavior (Usually a crash and/or bug. Please be as specific as possible. The more specific you are, the more likely it will be fixed.)
-- Any other information that you think may be useful (such as screenshots, videos, etc.)
-- If you are using a release, please also include the release version number.
+Before creating bug reports, please check [this list](#before-submitting-a-bug-report) as you might find out that you don't need to create one. When you are creating a bug report, please [include as many details as possible](#how-do-i-submit-a-good-bug-report). Fill out [the required template](.github/ISSUE_TEMPLATE/bug_report.md), the information it asks for helps us resolve issues faster.
 
-### Requesting features
+#### Before Submitting A Bug Report
 
-If you would like to request a feature, please create an issue with the following information:
+* **Check the [documentation](../README.md##-Installation)**. You might be able to find the cause of the problem and fix things yourself. Most importantly, check if you're using the latest version of the software and if the software supports your device. If you're using an older version, please try to reproduce the problem you're having in the latest version of the software.
 
-- The version of the code you are using (if you are using a release, please use the version number of the release, if you are using the development branch, please use the commit hash of the commit you are using)
-- The feature you would like to see added (please be as specific as possible)
-- Why you would like to see this feature added (if you have a use case for it, please include it)
-- The benefit of the feature (if any), and how it would benefit the project
-- Please include any possible code that you think may be useful (if you have any). These could be libraries to use, code snippets, etc. to bring your feature to life.
-- Finally, please mention and consider if there *might* be any drawbacks to making this feature. There are **always** pros and cons to everything. Please consider them before requesting a feature.
+* **Check the [issue tracker](https://www.github.com/TheModdersDen/BootSoundNX/issues)**. You might be able to find the cause of the problem and fix things yourself. Most importantly, check if the issue has already been reported. If it has and the issue is still open, add a comment to the existing issue instead of opening a new one.
 
-### Contributing code
+* **Check the [release notes](https://github.com/TheModdersDen/BootSoundNX/releases)**. You might be able to find the cause of the problem and fix things yourself. Most importantly, check if the issue has already been reported. If it has and the issue is still open, add a comment to the existing issue instead of opening a new one.
 
-If you would like to contribute code to this project, please create a pull request with the following information:
+* **Perform a [cursory search](https://www.github.com/TheModdersDen/BootSoundNX/issues)** to see if the problem has already been reported. If it has and the issue is still open, add a comment to the existing issue instead of opening a new one.
 
-- The version of the code you are using (if you are using a release, please use the version number of the release, if you are using the development branch, please use the commit hash of the commit you are using)
-- The feature you are adding (please be as specific as possible)
-- Why you are adding this feature (if you have a use case for it, please include it)
-- The benefit of the feature (if any), and how it would benefit the project
-- Please include detailed commit messages. These are very important, as they help me understand what you are doing, and why you are doing it. Please be as specific as possible.
-  - If you are like me, and sometimes forget to do this, please at least go back and comment on your commits to let me (and others) know what your commits do.
-- Please include any possible code that you think may be useful (if you have any). These could be libraries to use, code snippets, etc. to bring your feature to life.
+#### How Do I Submit A (Good) Bug Report?
 
-### Contributing documentation
+Explain the problem and include additional details to help maintainers reproduce the problem:
 
-If you would like to contribute documentation to this project, please create a pull request with the following information:
+* **Use a clear and descriptive title** for the issue to identify the problem.
 
-- The version of the code you are using (if you are using a release, please use the version number of the release, if you are using the development branch, please use the commit hash of the commit you are using)
-- The requested documentation and/or documentation changes (please be as specific as possible)
-- Why you are requesting this documentation or documentation change (if you have a use case for it, please include it)
-- Finally, how this documentation or documentation change would benefit the project and why it will make things easier to understand.
+* **Describe the exact steps which reproduce the problem** in as many details as possible. For example, start by explaining how you started BootSoundNX, e.g. which command exactly you used in the terminal. When listing steps, **don't just say what you did, but explain how you did it**. For example, if you moved the cursor to the end of a line, explain if you used the mouse, or a keyboard shortcut or an IDE action.
 
-### Contributing translations
+* **Provide specific examples to demonstrate the steps**. Include links to files or GitHub projects, or copy/pasteable snippets, which you use in those examples. If you're providing snippets in the issue, use [Markdown code blocks](https://help.github.com/articles/markdown-basics/#multiple-lines).
 
-If you would like to contribute translations to this project, please create a pull request with the following information:
+* **Describe the behavior you observed after following the steps** and point out what exactly is the problem with that behavior.
 
-- The version of the code you are using (if you are using a release, please use the version number of the release, if you are using the development branch, please use the commit hash of the commit you are using)
-- The requested translation and/or translation changes (please be as specific as possible)
-- Why you are requesting this translation or translation change (if you have a use case for it, please include it)
-- The language you are translating to (please use the [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) language code)
-- Why you are translating to this language (if you have a use case for it, please include it)
-- Finally, how this translation or translation change would benefit the project and why it will make things easier to understand.
+* **Explain which behavior you expected to see instead and why.**
 
-### Crediting yourself
+* **Include screenshots and animated GIFs** which show you following the described steps and clearly demonstrate the problem. You can use [this tool](https://www.cockos.com/licecap/) to record GIFs on macOS and Windows, and [this tool](https://github.com/phw/peek) or [this tool](https://github.com/leafo/gifine) to record GIFs on Linux.
 
-If you would like to credit yourself for your contributions, please include your name, GitHub username, and/or any other information you would like to include in the [docs/CREDITS.md](docs/CREDITS.md) file. Please include the following information:
+#### How Do I Submit A (Good) Feature Request?
 
-- Your name and/or username (if you prefer to be anonymous, please include just your username)
-- Your GitHub link
-- Any other information you would like to include (such as your website, social media, etc.)
-- The date you contributed to the project (if you would like to include it)
-- The contribution you made (if you would like to include it)
-- The version of the code you contributed to (if you are using a release, please use the version number of the release, if you are using the development branch, please use the commit hash of the commit you are using)
+* **Use a clear and descriptive title** for the issue to identify the feature.
 
-### Crediting others
+* **Provide a step-by-step description of the suggested enhancement** in as many details as possible.
 
-If you would like to credit others for their contributions (as an example: you used a library from someone else in this project), please include their name, GitHub username, and/or any other information you would like to include in the [docs/CREDITS.md](docs/CREDITS.md) file. Please include the following information:
+* **Provide specific examples to demonstrate the steps**. Include copy/pasteable snippets which you use in those examples, as [Markdown code blocks](https://help.github.com/articles/markdown-basics/#multiple-lines).
 
-- Their name and/or username (if they prefer to be anonymous, please include just their username)
-- Their GitHub link (if available)
-- Their website (if available)
-- Their social media (if available), and if they would like to include it
-- The date you added their code to the project. This will be mandatory for other's code
-- The contribution they made (this will be mandatory for other's code, as I don't want any confusion as to what they contributed or legal issues)
-  
+* **Describe the current behavior** and **explain which behavior you expected to see instead** and why.
+
+* **Include screenshots and animated GIFs** which help you demonstrate the steps or point out the part of the project which the suggestion is related to. You can use [this tool](https://www.cockos.com/licecap/) to record GIFs on macOS and Windows, and [this tool](https://github.com/phw/peek) or [this tool](https://github.com/leafo/gifine) to record GIFs on Linux.
+
+* **Explain why this enhancement would be useful** to most users and isn't something that can or should be implemented as a community package.
+
+* **Specify which version of the project you're using.**
+
+* **Specify the name and version of the Switch you're using.** You can find this information in the System Settings.
+
+* **Specify the version of Atmosphere you're using.** You can find this information in the System Settings.
+
+* **Specify the version of Hekate you're using.** You can find this information in the System Settings.
+
+#### Submitting a Pull Request
+
+* **Fork the repository** and clone it to your local machine.
+
+* **Create a new branch** for your changes.
+
+* **Make your changes** to the source code.
+
+* **Test your changes** to the source code.
+
+* **Commit your changes** to the new branch.
+
+* **Push your changes** to your fork.
+
+* **Submit a pull request** to the original repository.
+
+* **Wait for a response** from the maintainers.
+
+* **Make changes to the pull request** if the maintainers recommend them.
+
+* **Celebrate** your success if and or when your pull request is merged!
+
+#### Code of Conduct
+
+This project and everyone participating in it is governed by the [Contributor Code of Conduct](CODE_OF_CONDUCT.md). By participating, you are expected to uphold this code. Please report any unacceptable behavior to [TheModdersDen](https://themoddersden.com/contact/).

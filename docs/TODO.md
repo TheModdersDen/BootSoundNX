@@ -1,13 +1,21 @@
-# TODO
+# ToDo/Future Plans
 
-## 1.5.0
+## Short-term/long-term To-Do
 
-- [ ] Get boot sound to play on boot, for the latest Atmosphere and HOS versions.
-- [ ] Test the code more thoroughly.
+**(?)** = Not sure if I can do this
 
-## Long-Term Goals (Not necessarily going to happen)
+- [ ] Add multi-bootsound support **(?)**
+- [ ] Add a configuration file **(?)**
+- [ ] Add more audio support (more support for file formats) **(??)**
+- [ ] Add some sort of GUI for the sysmodule to change the sound/configure it
+- [ ] Add a way to change the volume of the sound
+- [ ] Check into the bug where certain MP3 files play at a weird pitch and speed
+- [ ] Check into the bug where the sound cuts off early on some SD cards
+- [ ] Etc...
 
-- [ ] Add a way to change the boot sound from the homebrew menu (maybe?)
-- [ ] Add a better configuration system (maybe?)
-- [ ] Make a homebrew configuration app (maybe?)
-- [ ] Add a default boot sound, as a fallback for custom bootsounds (maybe?)
+## Future Plans
+
+- [ ] Do research to see if the switch can have a button combination to play different sounds upon boot (i.e. holding L+R+ZL+ZR on boot plays a different sound than just pressing the power button)
+- [ ] Potetnially Rewrite the sysmodule in C++ (I'm not sure if I want to do this, but I might)
+- [ ] Brainstorm more ideas for this sysmodule
+- [ ] Etc...
