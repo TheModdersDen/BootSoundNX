@@ -1,3 +1,5 @@
+#! Copyright (c) 2023 TheModdersDen
+
 # Use the latest 2.1 version of CircleCI pipeline process engine.
 # See: https://circleci.com/docs/configuration-reference
 version: 2.1
@@ -6,57 +8,80 @@ version: 2.1
 jobs:
   compile:
     docker:
-      - image: devkitpro/devkitarm:latest
+      - image: devkitpro/devkita64:latest
     steps:
       # Install dependencies
-      - run: sudo apt-get update && sudo apt-get install -y unzip zip
+      - run: sudo apt-get update && sudo apt-get install -y unzip zip npm
       - run: echo "Installed dependencies..."
       # Checkout the code from the VCS
-      - run: git clone "https://www.github.com/TheModdersDen/BootSoundNX" ~/BootSoundNX
-      - attach_workspace:
-          at: ~/BootSoundNX
-      - run: export BOOTSOUNDNX_VERSION=$(cat ./version.txt)
-      - run: echo "BootSoundNX version is $BOOTSOUNDNX_VERSION..."
+      - run: git clone "https://www.github.com/TheModdersDen/BootSoundNX" /root/project
+      - run: cd /root/project
       - run: echo "Checked out the code..."
+      - run:
+          name: Setup Environment Variables
+          command: |
+            echo 'export VERSION="$(cat /root/project/version.txt)"' >> "$BASH_ENV"
+            echo 'export GIT_SHA1="$CIRCLE_SHA1"' >> "$BASH_ENV"
+            echo 'export OUT_FILE="BootSoundNX-$VERSION.zip"' >> "$BASH_ENV"
+            source "$BASH_ENV"
+      # Get the project version
+      - run:
+          command: |
+            echo "Current version is: ${VERSION}";
+      # Get the release zip name
+      - run:
+          command: |
+            echo "Release zip name is: ${OUT_FILE}";
       # Build the code
-      - run: make build
+      - run: make -C /root/project -f /root/project/Makefile all
       - run: echo "Built the code..."
-      - run: mkdir -p ./atmosphere/contents/00FF0000000002AA/flags
-      - run: touch ./atmosphere/contents/00FF0000000002AA/flags/boot2.flag
+      - run: ls -la
+      - run: echo "$PWD"
+      - run: mkdir -p /root/project/atmosphere/contents/00FF0000000002AA/flags
+      - run: touch /root/project/atmosphere/contents/00FF0000000002AA/flags/boot2.flag
       - run: echo "Created boot2.flag..."
-      - run: mkdir -p ./config/BootSoundNX/sound/
-      - run: mv ./bootsoundnx.nsp ./atmosphere/contents/00FF0000000002AA/exefs.nsp
+      - run: mkdir -p /root/project/config/BootSoundNX/sound/
+      - run: mv /root/project/bootsoundnx.nsp /root/project/atmosphere/contents/00FF0000000002AA/exefs.nsp
       - run: echo "Copied bootsoundnx.nsp..."
-      - run: mv ./toolbox.json ./atmosphere/contents/00FF0000000002AA/toolbox.json
+      - run: mv /root/project/toolbox.json /root/project/atmosphere/contents/00FF0000000002AA/toolbox.json
       - run: echo "Copied toolbox.json..."
-      - run: wget https://tmd-tv-tech-2000.s3.us-west-2.amazonaws.com/Misc/bootsound.mp3 -O ./config/BootSoundNX/sound/bootsound.mp3
+      - run: wget https://tmd-tv-tech-2000.s3.us-west-2.amazonaws.com/Misc/bootsound.mp3 -O /root/project/config/BootSoundNX/sound/bootsound.mp3
       - run: echo "Downloaded bootsound.mp3 and saved it to the sound folder..."
-      - run: echo "Prepared release..."
-      - run: mkdir -p ./artifacts/
-      - run: zip -r ./artifacts/BootSoundNX-$CIRCLE_BUILD_NUM.zip ./atmosphere ./config
+      - run: 
+            name: Creating Artifacts
+            command: |
+              echo "Preparing release..."
+              mkdir -p /root/project/artifacts/
+              cd /root/project/artifacts/ && zip -9 -r /root/project/artifacts/${OUT_FILE} /root/project/atmosphere /root/project/config
+              ls -la /root/project/artifacts/;
+      # Upload the artifacts to CircleCI
+      - store_artifacts:
+          path: /root/project/artifacts
+          destination: artifacts
+      - run: echo "Uploaded artifacts..."
   publish-github-release:
     docker:
-      - image: cibuilds/github:0.13
+      - image: cibuilds/github:latest
     steps:
       - attach_workspace:
-          at: ~/BootSoundNX
+          at: /root/project/artifacts
       - run:
           name: "Publish Release on GitHub"
           command: |
-            VERSION=$(cat ./version.txt)
-            ghr -t ${GITHUB_TOKEN} -u ${CIRCLE_PROJECT_USERNAME} -r ${CIRCLE_PROJECT_REPONAME} -c ${CIRCLE_SHA1} -delete ${VERSION} ~/BootSoundNX/artifacts/*
+            echo 'Publishing release "$VERSION"...';
+            ghr -t ${GITHUB_TOKEN} -u ${CIRCLE_PROJECT_USERNAME} -r ${CIRCLE_PROJECT_REPONAME} -delete ${VERSION} /tmp/artifacts/*;
 # Orchestrate jobs using workflows
 # See: https://circleci.com/docs/configuration-reference/#workflows
 workflows:
   build-workflow:
     jobs:
-    - compile:
-        filters:
-          branches:
-            only: production
-    - publish-github-release:
-        requires:
-          - compile
-        filters:
-          branches:
-            only: production
+      - compile:
+          filters:
+            branches:
+              only: [production, development]
+      - publish-github-release:
+          requires:
+            - compile
+          filters:
+            branches:
+              only: production

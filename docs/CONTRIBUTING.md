@@ -80,4 +80,4 @@ Explain the problem and include additional details to help maintainers reproduce
 
 #### Code of Conduct
 
-This project and everyone participating in it is governed by the [Contributor Covenant Code of Conduct](CODE_OF_CONDUCT.md). By participating, you are expected to uphold this code. Please report unacceptable behavior to [TheModdersDen](https://www.github.com/TheModdersDen).
+This project and everyone participating in it is governed by the [Contributor Code of Conduct](CODE_OF_CONDUCT.md). By participating, you are expected to uphold this code. Please report any unacceptable behavior to [TheModdersDen](https://themoddersden.com/contact/).

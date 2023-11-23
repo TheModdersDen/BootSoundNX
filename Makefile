@@ -1,3 +1,5 @@
+# Copyright (c) 2023 TheModdersDen | https://github.com/TheModdersDen
+
 .SUFFIXES:
 
 ifeq ($(strip $(DEVKITPRO)),)
