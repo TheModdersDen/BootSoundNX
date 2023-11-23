@@ -20,19 +20,22 @@ jobs:
       - run:
           name: Setup Environment Variables
           command: |
-            echo 'export VERSION="$(cat /root/project/version.txt)"' >> "$BASH_ENV"
+            echo 'export BOOTSOUNDNX_VERSION="$(cat /root/project/version.txt)"' >> "$BASH_ENV"
             echo 'export GIT_SHA1="$CIRCLE_SHA1"' >> "$BASH_ENV"
-            echo 'export OUT_FILE="BootSoundNX-$VERSION.zip"' >> "$BASH_ENV"
+            echo 'export OUT_FILE="BootSoundNX-$BOOTSOUNDNX_VERSION.zip"' >> "$BASH_ENV"
             source "$BASH_ENV"
       # Get the project version
       - run:
           command: |
-            echo "Current version is: ${VERSION}";
+            echo "Current version is: ${BOOTSOUNDNX_VERSION}";
       # Get the release zip name
       - run:
           command: |
             echo "Release zip name is: ${OUT_FILE}";
-      # Build the code
+      # Clean the project
+      - run: make -C /root/project -f /root/project/Makefile clean
+      - run: echo "Built the code..."
+      # Build the project
       - run: make -C /root/project -f /root/project/Makefile all
       - run: echo "Built the code..."
       - run: ls -la
@@ -68,8 +71,8 @@ jobs:
       - run:
           name: "Publish Release on GitHub"
           command: |
-            echo 'Publishing release "$VERSION"...';
-            ghr -t ${GITHUB_TOKEN} -u ${CIRCLE_PROJECT_USERNAME} -r ${CIRCLE_PROJECT_REPONAME} -delete ${VERSION} /tmp/artifacts/*;
+            echo 'Publishing release "${BOOTSOUNDNX_VERSION}"...';
+            ghr -t ${GITHUB_TOKEN} -u ${CIRCLE_PROJECT_USERNAME} -r ${CIRCLE_PROJECT_REPONAME} -delete ${BOOTSOUNDNX_VERSION} /tmp/artifacts/*;
 # Orchestrate jobs using workflows
 # See: https://circleci.com/docs/configuration-reference/#workflows
 workflows:
