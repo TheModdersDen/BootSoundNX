@@ -5,11 +5,11 @@ title: 'revert: '
 labels: revert
 ---
 
-**Description**
+## Description
 
 Provide a link to a PR/Commit that you are looking to revert and why.
 
-**Requirements**
+## Requirements
 
 - [ ] Change has been reverted
 - [ ] No change in unit/widget test coverage has happened

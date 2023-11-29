@@ -5,10 +5,10 @@ title: 'build: '
 labels: build
 ---
 
-**Description**
+## Descriptions
 
 Describe what changes need to be done to the build system and why
 
-**Requirements**
+## Requirements
 
 - [ ] The build system is passing

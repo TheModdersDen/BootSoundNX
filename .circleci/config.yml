@@ -1,4 +1,22 @@
-#! Copyright (c) 2023 TheModdersDen
+#! Copyright (c) 2023 Bryan Hunter (TheModdersDen) | https://github.com/TheModdersDen
+#
+# Permission is hereby granted, free of charge, to any person obtaining a copy of
+# this software and associated documentation files (the "Software"), to deal in
+# the Software without restriction, including without limitation the rights to
+# use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of
+# the Software, and to permit persons to whom the Software is furnished to do so,
+# subject to the following conditions:
+#
+# The above copyright notice and this permission notice shall be included in all
+# copies or substantial portions of the Software.
+#
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
+# FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
+# COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
+# IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+# CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
 
 # Use the latest 2.1 version of CircleCI pipeline process engine.
 # See: https://circleci.com/docs/configuration-reference
@@ -37,22 +55,22 @@ jobs:
       - run: echo "Built the code..."
       - run: ls -la
       - run: echo "$PWD"
-      - run: mkdir -p /root/project/atmosphere/contents/00FF0000000002AA/flags
-      - run: touch /root/project/atmosphere/contents/00FF0000000002AA/flags/boot2.flag
+      - run: mkdir -p /root/project/dist/atmosphere/contents/00FF0000000002AA/flags
+      - run: touch /root/project/dist/atmosphere/contents/00FF0000000002AA/flags/boot2.flag
       - run: echo "Created boot2.flag..."
-      - run: mkdir -p /root/project/config/BootSoundNX/sound/
-      - run: mv /root/project/bootsoundnx.nsp /root/project/atmosphere/contents/00FF0000000002AA/exefs.nsp
+      - run: mkdir -p /root/project/dist/config/BootSoundNX/sound/
+      - run: mv /root/project/bootsoundnx.nsp /root/project/dist/atmosphere/contents/00FF0000000002AA/exefs.nsp
       - run: echo "Copied bootsoundnx.nsp..."
-      - run: mv /root/project/toolbox.json /root/project/atmosphere/contents/00FF0000000002AA/toolbox.json
+      - run: mv /root/project/toolbox.json /root/project/dist/atmosphere/contents/00FF0000000002AA/toolbox.json
       - run: echo "Copied toolbox.json..."
-      - run: wget https://tmd-tv-tech-2000.s3.us-west-2.amazonaws.com/Misc/bootsound.mp3 -O /root/project/config/BootSoundNX/sound/bootsound.mp3
+      - run: wget https://tmd-tv-tech-2000.s3.us-west-2.amazonaws.com/Misc/bootsound.mp3 -O /root/project/dist/config/BootSoundNX/sound/bootsound.mp3
       - run: echo "Downloaded bootsound.mp3 and saved it to the sound folder..."
       - run: 
             name: Creating Artifacts
             command: |
               echo "Preparing release..."
               mkdir -p /root/project/artifacts/
-              cd /root/project/artifacts/ && zip -9 -r /root/project/artifacts/${OUT_FILE} /root/project/atmosphere /root/project/config
+              cd /root/project/artifacts/ && zip -9 -r /root/project/artifacts/${OUT_FILE} /root/project/dist/*
               ls -la /root/project/artifacts/;
       # Upload the artifacts to CircleCI
       - store_artifacts:
@@ -69,7 +87,7 @@ jobs:
           name: "Publish Release on GitHub"
           command: |
             echo 'Publishing release "$VERSION"...';
-            ghr -t ${GITHUB_TOKEN} -u ${CIRCLE_PROJECT_USERNAME} -r ${CIRCLE_PROJECT_REPONAME} -delete ${VERSION} /tmp/artifacts/*;
+            ghr -t ${GITHUB_TOKEN} -u ${CIRCLE_PROJECT_USERNAME} -r ${CIRCLE_PROJECT_REPONAME} -delete ${VERSION} /root/project/artifacts/${OUT_FILE};
 # Orchestrate jobs using workflows
 # See: https://circleci.com/docs/configuration-reference/#workflows
 workflows:

@@ -5,10 +5,10 @@ title: 'refactor: '
 labels: refactor
 ---
 
-**Description**
+## Description
 
 Clearly describe what needs to be refactored any why. Please provide links to related issues (bugs or upcoming features) in order to help prioritize.
 
-**Requirements**
+## Requirements
 
 - [ ] There is no drop in the unit or widget test coverage percentage.

@@ -43,7 +43,6 @@
     the Derivative Works; and
 
     (d) If the Work includes a "NOTICE" text file as part of its
-    
     distribution, then any Derivative Works that You distribute must
     include a readable copy of the attribution notices contained
     within such NOTICE file, excluding those notices that do not
@@ -66,7 +65,7 @@
     for any such Derivative Works as a whole, provided Your use,
     reproduction, and distribution of the Work otherwise complies with
     the conditions stated in this License.
-    
+
 5. Submission of Contributions. Unless You explicitly state otherwise,
     any Contribution intentionally submitted for inclusion in the Work
     by You to the Licensor shall be under the terms and conditions of

@@ -5,10 +5,10 @@ title: 'style: '
 labels: style
 ---
 
-**Description**
+## Description
 
-Clearly describe what you are looking to change and why. 
+Clearly describe what you are looking to change and why.
 
-**Requirements**
+## Requirements
 
 - [ ] There is no drop in the unit or widget test coverage percentage.

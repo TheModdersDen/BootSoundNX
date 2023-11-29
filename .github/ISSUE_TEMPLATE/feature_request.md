@@ -5,18 +5,18 @@ title: 'feat: '
 labels: feature
 ---
 
-**Description**
+## Description
 
 Clearly describe what you are looking to add. The more business/user context the better.
 
-**Requirements**
+## Requirements
 
 - [ ] Checklist of requirements to be fulfilled
 
-**Designs**
+## Designs
 
 - [Screen Name](Screen URL)
 
-**Additional Context**
+## Additional Context
 
 Add any other context or screenshots about the feature request go here.

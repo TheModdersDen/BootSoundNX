@@ -5,6 +5,7 @@ release
 *.npdm
 *.nso
 *.nsp
+dist/
 
 ### Backup ###
 *.bak

@@ -5,10 +5,10 @@ title: 'docs: '
 labels: documentation
 ---
 
-**Description**
+## Description
 
 Clearly describe what documentation you are looking to add or improve.
 
-**Requirements**
+## Requirements
 
 - [ ] Requirements go here

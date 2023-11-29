@@ -31,20 +31,21 @@ To replace the boot sound, replace it with your sound in ```sdmc://config/BootSo
 This is from a conversation with a tester of this sysmodule named @[pixeltester](https://github.com/pixeltester). Shoutout to that individual for this find:
 
 > Regarding the issue with the gap in the audio, I finally tested a long bootsound with two SD cards on the same Switch and there is quite a large variance as to where the gap occurs. Sandisk = the gap is very early in the bootsound, Samsung = the gap is in the middle of the bootsound.
-
 > These are good quality SD cards formatted to FAT32 with hekate. I have no idea how to resolve it but it seems it was indeed down to some kind of hardware variance and possibly format method also.
 
 ## Troubleshooting
+
+### Option 1
 
 To disable/remove the sysmodule, please do one of the three following
 
 - Remove the following file: ```sdmc://atmosphere/contents/00FF0000000002AA/flags/boot2.flag.```
 
-**OR**
+### Option 2
 
 - Disable the sys-module in a sysmodule manager (Such as DeepSea toolbox)
 
-**OR**
+### Option 3
 
 - Download this handy boot payload and remove all sysmodules by starting it and try again (**last resort**): [CommonProblemResolver](https://github.com/Team-Neptune/CommonProblemResolver/releases).
   - Stick it in your ```bootloader/payloads``` folder to use it in Hekate.

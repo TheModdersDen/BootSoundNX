@@ -14,6 +14,6 @@
 
 - Added support for HOS 14.1.1
 
-- Refactered code
+- Refactored code
 
 - Improved system stability and reliability (pun intended)
